@@ -26,10 +26,12 @@ export default function TerminalSection() {
     },
   ]);
 
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (terminalBodyRef.current) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (cmd: string) => {
@@ -269,6 +271,7 @@ export default function TerminalSection() {
 
           {/* Terminal Body */}
           <div
+            ref={terminalBodyRef}
             style={{
               padding: '1.5rem',
               minHeight: '260px',
@@ -291,7 +294,6 @@ export default function TerminalSection() {
                 </div>
               </div>
             ))}
-            <div ref={terminalEndRef} />
           </div>
 
           {/* Terminal Input Form */}
