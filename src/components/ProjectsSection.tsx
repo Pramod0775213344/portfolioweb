@@ -165,45 +165,51 @@ export default function ProjectsSection() {
           </div>
 
           {/* Module Chips */}
-          <div style={{ marginBottom: '2rem' }}>
+          <div style={{ marginBottom: '1.75rem' }}>
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.7rem',
+                fontSize: '0.68rem',
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.12em',
                 color: 'var(--text-subtle)',
-                marginBottom: '0.85rem',
+                marginBottom: '0.75rem',
               }}
             >
               System Modules
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: '0.55rem',
+              }}
+            >
               {modules.map((mod, i) => (
                 <span
                   key={i}
                   style={{
-                    display: 'inline-flex',
+                    display: 'flex',
                     alignItems: 'center',
                     gap: '0.55rem',
-                    padding: '0.55rem 1rem',
+                    padding: '0.6rem 0.9rem',
                     border: '1px solid var(--border)',
                     backgroundColor: 'var(--surface-subtle)',
-                    borderRadius: '999px',
-                    fontSize: '0.82rem',
+                    borderRadius: '8px',
+                    fontSize: '0.83rem',
                     fontWeight: 500,
                     color: 'var(--text)',
                     fontFamily: 'var(--font-sans, system-ui)',
-                    letterSpacing: '0',
                     lineHeight: 1,
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   <span
                     style={{
-                      width: '22px',
-                      height: '22px',
-                      borderRadius: '50%',
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '6px',
                       backgroundColor: 'var(--accent-subtle)',
                       display: 'flex',
                       alignItems: 'center',
@@ -221,11 +227,11 @@ export default function ProjectsSection() {
           </div>
 
           {/* Tech Stack Tags */}
-          <div style={{ marginBottom: '2rem' }}>
+          <div style={{ marginBottom: '1.75rem' }}>
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.7rem',
+                fontSize: '0.68rem',
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.12em',
@@ -235,12 +241,22 @@ export default function ProjectsSection() {
             >
               Tech Stack
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, auto)',
+                justifyContent: 'start',
+                gap: '0.45rem',
+              }}
+            >
               {techStack.map((tech) => (
                 <span
                   key={tech}
                   style={{
-                    padding: '0.35rem 0.85rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem',
+                    padding: '0.35rem 0.8rem',
                     border: '1px solid var(--border)',
                     borderRadius: '6px',
                     backgroundColor: 'var(--surface)',
@@ -248,11 +264,18 @@ export default function ProjectsSection() {
                     fontSize: '0.78rem',
                     fontWeight: 600,
                     color: 'var(--text)',
-                    letterSpacing: '0.02em',
                     lineHeight: 1,
-                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
                   }}
                 >
+                  <span
+                    style={{
+                      width: '5px',
+                      height: '5px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--accent)',
+                      flexShrink: 0,
+                    }}
+                  />
                   {tech}
                 </span>
               ))}
