@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Warm Paper Neo-Brutalist Theme (Default like Harsha Madusanka) */
-  --bg: #f3efe6;
-  --bg-rgb: 243, 239, 230;
-  --surface: #faf7f2;
-  --surface-subtle: #eae5da;
-  --surface-elevated: #ffffff;
-  --border: #181716;
-  --hairline: rgba(24, 23, 22, 0.14);
-  --text: #181716;
-  --text-muted: #524e48;
+  /* Default: Sleek Neo-Brutalist Dark Theme */
+  --bg: #121110;
+  --bg-rgb: 18, 17, 16;
+  --surface: #1a1918;
+  --surface-subtle: #242220;
+  --surface-elevated: #262422;
+  --border: #383531;
+  --hairline: rgba(255, 255, 255, 0.1);
+  --text: #f3efe6;
+  --text-muted: #aca59a;
   --text-subtle: #7a756d;
-  --accent: #e84e27; /* Signature brutalist electric vermilion */
-  --accent-hover: #ff5e36;
-  --accent-subtle: rgba(232, 78, 39, 0.12);
+  --accent: #ff5733;
+  --accent-hover: #ff7052;
+  --accent-subtle: rgba(255, 87, 51, 0.15);
   --accent-contrast: #ffffff;
-  --shadow-color: #181716;
-  --grid-line: rgba(24, 23, 22, 0.045);
+  --shadow-color: #000000;
+  --grid-line: rgba(255, 255, 255, 0.035);
   
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', -apple-system, sans-serif;
@@ -45,6 +45,26 @@
   --accent-contrast: #ffffff;
   --shadow-color: #000000;
   --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+[data-theme='light'] {
+  /* Warm Paper Neo-Brutalist Theme */
+  --bg: #f3efe6;
+  --bg-rgb: 243, 239, 230;
+  --surface: #faf7f2;
+  --surface-subtle: #eae5da;
+  --surface-elevated: #ffffff;
+  --border: #181716;
+  --hairline: rgba(24, 23, 22, 0.14);
+  --text: #181716;
+  --text-muted: #524e48;
+  --text-subtle: #7a756d;
+  --accent: #e84e27; /* Signature brutalist electric vermilion */
+  --accent-hover: #ff5e36;
+  --accent-subtle: rgba(232, 78, 39, 0.12);
+  --accent-contrast: #ffffff;
+  --shadow-color: #181716;
+  --grid-line: rgba(24, 23, 22, 0.045);
 }
 
 /* Base Reset & Typography */
@@ -129,11 +149,11 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.04) 100%);
+  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.4) 100%);
 }
 
-[data-theme='dark'] .edge-vignette {
-  background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.4) 100%);
+[data-theme='light'] .edge-vignette {
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.04) 100%);
 }
 
 /* Common Layout Containers */

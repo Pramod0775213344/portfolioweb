@@ -5,9 +5,23 @@ import { Sun, Moon, Menu, X, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 
 export default function Navbar() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Sync theme with document/storage on mount
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        setTheme('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +67,9 @@ export default function Navbar() {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
     document.documentElement.setAttribute('data-theme', nextTheme);
+    try {
+      localStorage.setItem('theme', nextTheme);
+    } catch (e) {}
   };
 
   const navLinks = [

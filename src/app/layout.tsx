@@ -64,9 +64,9 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="dark">
       <head>
-        <meta name="theme-color" content="#f3efe6" />
+        <meta name="theme-color" content="#121110" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           type="application/ld+json"
@@ -75,14 +75,18 @@ export default function RootLayout({
       </head>
       <body>
         {/* Blocking inline script — runs synchronously before first paint.
-            1. Adds .page-loading to <html> → CSS hides body (no flash)
-            2. Disables browser scroll restoration
-            3. Forces scroll to absolute top */}
+            1. Initializes theme preference (defaults to dark)
+            2. Adds .page-loading to <html> → CSS hides body (no flash)
+            3. Disables browser scroll restoration
+            4. Forces scroll to absolute top */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
+                  var saved = localStorage.getItem('theme');
+                  var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
                   document.documentElement.classList.add('page-loading');
                   if ('scrollRestoration' in history) {
                     history.scrollRestoration = 'manual';
