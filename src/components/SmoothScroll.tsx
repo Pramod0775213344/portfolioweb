@@ -44,12 +44,16 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       setTimeout(() => {
         const target = document.querySelector(hash);
         if (target) {
-          lenis.scrollTo(target as HTMLElement, { offset: -72, immediate: false });
+          const topic =
+            (target.querySelector('.section-tag') as HTMLElement) ||
+            (target.querySelector('h2') as HTMLElement) ||
+            (target as HTMLElement);
+          lenis.scrollTo(topic, { offset: -12, immediate: false });
         }
       }, 400); // wait for fade-in to complete
     }
 
-    // Intercept all internal #anchor clicks → Lenis smooth scroll with offset
+    // Intercept all internal #anchor clicks → Lenis smooth scroll directly to section topic
     const handleAnchorClick = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement).closest('a');
       if (!anchor) return;
@@ -60,12 +64,17 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       e.preventDefault();
 
       if (href === '#' || href === '#hero') {
-        lenis.scrollTo(0, { duration: 1.3 });
+        lenis.scrollTo(0, { duration: 1.2 });
         window.history.replaceState(null, '', window.location.pathname);
       } else {
         const target = document.querySelector(href);
         if (target) {
-          lenis.scrollTo(target as HTMLElement, { offset: -72, duration: 1.3 });
+          // Navigate precisely to the section's topic header so it aligns right beneath navbar
+          const topic =
+            (target.querySelector('.section-tag') as HTMLElement) ||
+            (target.querySelector('h2') as HTMLElement) ||
+            (target as HTMLElement);
+          lenis.scrollTo(topic, { offset: -12, duration: 1.2 });
           window.history.pushState(null, '', href);
         }
       }
