@@ -6,12 +6,12 @@ import { GithubIcon } from '@/components/Icons';
 
 export default function ProjectsSection() {
   const modules = [
-    { icon: <CalendarCheck size={16} />, title: 'Booking Management' },
-    { icon: <Truck size={16} />, title: 'Fleet Management' },
-    { icon: <Users size={16} />, title: 'Driver Management' },
-    { icon: <Briefcase size={16} />, title: 'Supplier Management' },
-    { icon: <CreditCard size={16} />, title: 'Payment & Invoicing' },
-    { icon: <Network size={16} />, title: 'REST APIs & DB Layer' },
+    { icon: <CalendarCheck size={13} />, title: 'Booking Management' },
+    { icon: <Truck size={13} />, title: 'Fleet Management' },
+    { icon: <Users size={13} />, title: 'Driver Management' },
+    { icon: <Briefcase size={13} />, title: 'Supplier Management' },
+    { icon: <CreditCard size={13} />, title: 'Payment & Invoicing' },
+    { icon: <Network size={13} />, title: 'REST APIs & DB Layer' },
   ];
 
   const techStack = ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'REST APIs', 'HTML5', 'CSS3', 'Git'];
@@ -169,36 +169,51 @@ export default function ProjectsSection() {
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.68rem',
-                fontWeight: 700,
+                fontSize: '0.7rem',
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.12em',
                 color: 'var(--text-subtle)',
-                marginBottom: '0.75rem',
+                marginBottom: '0.85rem',
               }}
             >
-              [ 6 Operational Modules ]
+              System Modules
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
               {modules.map((mod, i) => (
                 <span
                   key={i}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.4rem',
-                    padding: '0.4rem 0.8rem',
-                    border: '1.5px solid var(--border)',
+                    gap: '0.55rem',
+                    padding: '0.55rem 1rem',
+                    border: '1px solid var(--border)',
                     backgroundColor: 'var(--surface-subtle)',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.72rem',
-                    fontWeight: 700,
+                    borderRadius: '999px',
+                    fontSize: '0.82rem',
+                    fontWeight: 500,
                     color: 'var(--text)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.04em',
+                    fontFamily: 'var(--font-sans, system-ui)',
+                    letterSpacing: '0',
+                    lineHeight: 1,
                   }}
                 >
-                  <span style={{ color: 'var(--accent)' }}>{mod.icon}</span>
+                  <span
+                    style={{
+                      width: '22px',
+                      height: '22px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--accent-subtle)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--accent)',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {mod.icon}
+                  </span>
                   {mod.title}
                 </span>
               ))}
@@ -210,19 +225,36 @@ export default function ProjectsSection() {
             <p
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.68rem',
-                fontWeight: 700,
+                fontSize: '0.7rem',
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.12em',
                 color: 'var(--text-subtle)',
-                marginBottom: '0.65rem',
+                marginBottom: '0.75rem',
               }}
             >
-              Technologies:
+              Tech Stack
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
               {techStack.map((tech) => (
-                <span key={tech} className="tag">{tech}</span>
+                <span
+                  key={tech}
+                  style={{
+                    padding: '0.35rem 0.85rem',
+                    border: '1px solid var(--border)',
+                    borderRadius: '6px',
+                    backgroundColor: 'var(--surface)',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    color: 'var(--text)',
+                    letterSpacing: '0.02em',
+                    lineHeight: 1,
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
+                  }}
+                >
+                  {tech}
+                </span>
               ))}
             </div>
           </div>
