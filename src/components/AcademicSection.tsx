@@ -9,22 +9,22 @@ export default function AcademicSection() {
   const journeyData = [
     {
       id: '01',
-      period: '2023 → Present',
+      period: 'University of Colombo',
       badge: 'Academic Degree',
-      title: 'BSc (Hons) in Software Engineering',
-      institution: 'University of Colombo · Sri Lanka',
+      title: 'Bachelor of Information Technology (BIT)',
+      institution: 'University of Colombo · Colombo, SL',
       overview:
-        'Pursuing an intensive undergraduate degree emphasizing computer science foundations, algorithm analysis, relational database modeling, object-oriented design, and modern software engineering practices.',
+        'Bachelor of Information Technology (BIT) at the University of Colombo, Colombo, SL. Rigorous academic training spanning modern software development, enterprise application architecture, relational database management, object-oriented programming, and web technologies.',
       metrics: [
-        { label: 'Degree Status', val: 'Undergrad', desc: 'University of Colombo' },
-        { label: 'Core Focus', val: 'Full-Stack', desc: 'Enterprise & Web Software' },
-        { label: 'Internship', val: 'Available', desc: 'Seeking Placement / Intern Role' },
+        { label: 'Degree', val: 'BIT', desc: 'Bachelor of Information Technology' },
+        { label: 'Institution', val: 'Univ. Colombo', desc: 'University of Colombo, Colombo, SL' },
+        { label: 'Availability', val: 'Immediate', desc: 'Seeking Software Engineering Roles' },
       ],
       highlights: [
-        'Advanced Data Structures & Algorithms (algorithmic efficiency, tree & graph models)',
-        'Object-Oriented Analysis & Design (SOLID principles, clean architecture, design patterns)',
-        'Relational Database Management Systems (MySQL, database normalization, schema integrity)',
-        'Web Application Development & RESTful API Architecture',
+        'Enterprise Application Development & Object-Oriented Software Engineering (Java, OOP principles)',
+        'Relational Database Management Systems (MySQL, normalization, schema modeling, ACID transactions)',
+        'Full-Stack Web Development & RESTful API Architecture (Spring Boot, JavaScript, HTML5, CSS3)',
+        'Data Structures, Algorithms, Software Lifecycle, and System Requirements Analysis',
       ],
       skills: ['Java', 'Spring Boot', 'MySQL', 'JavaScript', 'REST APIs', 'OOP', 'Data Structures'],
     },

@@ -67,7 +67,7 @@ export default function AboutSection() {
                 color: 'var(--text-muted)',
               }}
             >
-              As a dedicated Software Engineering Undergraduate, I have invested hundreds of hours into mastering the foundational pillars of software craftsmanship: algorithmic problem solving, object-oriented design patterns, database normalization, and modern client-server architectures.
+              With a Bachelor of Information Technology (BIT) from the University of Colombo (Colombo, SL), I have invested hundreds of hours into mastering the foundational pillars of software craftsmanship: algorithmic problem solving, object-oriented design patterns, relational database normalization, and modern client-server architectures.
             </p>
 
             <p
@@ -77,7 +77,7 @@ export default function AboutSection() {
                 color: 'var(--text-muted)',
               }}
             >
-              While I am early in my career without formal commercial years on paper, I treat my academic and personal projects with industry-level discipline: using Git commit conventions, structuring typed codebases with Next.js and TypeScript, handling edge cases defensively, and writing self-documenting code.
+              In my software development work—exemplified by my enterprise Transport Management System built with Java, Spring Boot, and MySQL—I maintain industry-level discipline: using structured Git workflows, designing clean database-driven REST APIs, handling edge cases defensively, and writing self-documenting code.
             </p>
 
             <p
@@ -183,10 +183,10 @@ export default function AboutSection() {
                   />
                   <div>
                     <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text)' }}>
-                      Software Engineering Undergrad
+                      Bachelor of Information Technology (BIT)
                     </h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                      BSc (Hons) in Software Engineering · University of Colombo
+                      University of Colombo · Colombo, SL
                     </p>
                   </div>
                 </li>

@@ -2,28 +2,30 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Pramod Ravisanka · Software Engineering Undergraduate',
+  title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
   description:
-    'Software engineering undergraduate focused on modern web architectures, distributed systems, and clean code. Building robust solutions from first principles.',
+    'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
   authors: [{ name: 'Pramod Ravisanka' }],
   creator: 'Pramod Ravisanka',
   keywords: [
     'Pramod Ravisanka',
+    'Bachelor of Information Technology',
+    'BIT',
+    'University of Colombo',
+    'Colombo SL',
     'Software Engineer',
-    'Undergraduate',
-    'Next.js',
-    'TypeScript',
-    'React',
+    'Java',
+    'Spring Boot',
+    'MySQL',
     'Full Stack Developer',
     'Sri Lanka',
     'Portfolio',
-    'Student Developer',
   ],
   metadataBase: new URL('https://pramodravisanka.dev'),
   openGraph: {
-    title: 'Pramod Ravisanka · Software Engineering Undergraduate',
+    title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
     description:
-      'Software engineering undergraduate focused on modern web architectures, distributed systems, and clean code. Building robust solutions from first principles.',
+      'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
     url: 'https://pramodravisanka.dev',
     siteName: 'Pramod Ravisanka Portfolio',
     locale: 'en_US',
@@ -31,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pramod Ravisanka · Software Engineering Undergraduate',
+    title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
     description:
-      'Building robust solutions from first principles. Open to internships and junior developer roles.',
+      'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Engineered enterprise Transport Management System using Java, Spring Boot, MySQL.',
   },
 };
 
@@ -46,19 +48,37 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Pramod Ravisanka',
-    jobTitle: 'Software Engineering Undergraduate',
+    jobTitle: 'Software Engineer',
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'University of Colombo',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Colombo',
+        addressCountry: 'LK',
+      },
+    },
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'degree',
+      name: 'Bachelor of Information Technology (BIT)',
+    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'LK',
       addressLocality: 'Colombo',
     },
     knowsAbout: [
+      'Bachelor of Information Technology (BIT)',
+      'University of Colombo',
+      'Java',
+      'Spring Boot',
+      'MySQL',
+      'REST APIs',
       'Full Stack Development',
       'Next.js',
       'TypeScript',
-      'Node.js',
-      'PostgreSQL',
-      'Data Structures & Algorithms',
+      'Object-Oriented Programming',
       'System Architecture',
     ],
   };

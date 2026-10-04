@@ -1,6 +1,6 @@
 # Pramod Ravisanka — Portfolio Website
 
-A modern, high-performance, single-page portfolio website for **Pramod Ravisanka** (Software Engineering Undergraduate), inspired by editorial neo-brutalism and clean engineering principles.
+A modern, high-performance, single-page portfolio website for **Pramod Ravisanka** (Bachelor of Information Technology — University of Colombo, Colombo, SL), inspired by editorial neo-brutalism and clean engineering principles.
 
 Built with **Next.js 15 (App Router)**, **TypeScript**, **Vanilla CSS**, and **Lenis Smooth Scroll**.
 
@@ -23,9 +23,9 @@ Built with **Next.js 15 (App Router)**, **TypeScript**, **Vanilla CSS**, and **L
 
 - **Editorial Neo-Brutalist Design**: High-contrast typography (`Space Grotesk`, `Space Mono`, `Plus Jakarta Sans`), warm paper light mode, deep obsidian dark mode, and signature electric vermilion accents.
 - **Flawless Initial Load**: Zero scroll-jump prevention via pre-paint execution script and smooth opacity fade-in.
-- **Seamless Ticker Marquee**: Infinite horizontal marquee bar pinned to the bottom of the hero viewport.
+- **Featured Capstone Project**: In-depth breakdown of the University of Colombo **Transport Management System** (Java, Spring Boot, MySQL, REST APIs).
 - **Interactive Developer Terminal**: In-browser interactive CLI (`help`, `about`, `skills`, `projects`, `hire`, `clear`).
-- **Academic & Projects Showcase**: Interactive filterable project cards with architecture breakdowns and academic journey tabs.
+- **Academic Journey Tabs**: University of Colombo Bachelor of Information Technology (BIT) and software engineering credentials.
 - **Live Local Time**: Colombo (GMT+5:30) live clock and copy-to-clipboard email utility.
 - **Mobile Responsive Drawer**: Staggered animated drawer menu with body-scroll locking and quick navigation.
 - **Floating Scroll-To-Top**: Interactive progress indicator with Lenis smooth scroll easing curve.
@@ -36,8 +36,8 @@ Built with **Next.js 15 (App Router)**, **TypeScript**, **Vanilla CSS**, and **L
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/Pramod0775213344/portfolioweb.git
+cd "Portfolio Website"
 ```
 
 ### 2. Install dependencies

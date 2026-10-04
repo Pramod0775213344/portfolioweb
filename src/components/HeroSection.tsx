@@ -111,7 +111,7 @@ export default function HeroSection() {
                 marginBottom: '2rem',
               }}
             >
-              I am a <strong style={{ color: 'var(--text)' }}>Software Engineering Undergraduate</strong> at the <strong style={{ color: 'var(--text)' }}>University of Colombo</strong> with a passion for building clean, robust applications. Currently engineering an enterprise <strong style={{ color: 'var(--accent)' }}>Transport Management System</strong> utilizing Java, Spring Boot, MySQL, and modern web architectures.
+              <strong style={{ color: 'var(--text)' }}>Bachelor of Information Technology (BIT)</strong> from the <strong style={{ color: 'var(--text)' }}>University of Colombo (Colombo, SL)</strong>. Passionate software engineer with a strong focus on clean architecture, enterprise Java, Spring Boot, MySQL, and database-driven web systems.
             </p>
 
             {/* CTA Buttons */}
@@ -179,7 +179,7 @@ export default function HeroSection() {
                     lineHeight: 1.1,
                   }}
                 >
-                  BSc (Hons)
+                  BIT Degree
                 </div>
                 <div
                   style={{
@@ -190,7 +190,7 @@ export default function HeroSection() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Univ. of Colombo
+                  Univ. of Colombo, SL
                 </div>
               </div>
 
@@ -375,7 +375,7 @@ export default function HeroSection() {
               >
                 <Image
                   src="/images/pramod.jpg"
-                  alt="Pramod Ravisanka, Software Engineering Undergraduate"
+                  alt="Pramod Ravisanka, Bachelor of Information Technology (BIT) - University of Colombo"
                   fill
                   priority
                   style={{

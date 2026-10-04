@@ -57,7 +57,7 @@ export default function Footer() {
                 Pramod Ravisanka
               </p>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--text-subtle)' }}>
-                Software Engineering Undergraduate · Sri Lanka
+                Bachelor of Information Technology (BIT) · University of Colombo, SL
               </p>
             </div>
           </div>

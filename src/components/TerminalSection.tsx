@@ -69,8 +69,7 @@ export default function TerminalSection() {
       case 'about':
         result = (
           <p>
-            Pramod Ravisanka is a Software Engineering Undergraduate based in Colombo, Sri Lanka.
-            Passionate about full-stack engineering, clean code, algorithms, and distributed systems.
+            Pramod Ravisanka holds a Bachelor of Information Technology (BIT) from the University of Colombo (Colombo, SL). Passionate software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and full-stack web architectures.
           </p>
         );
         break;
@@ -78,10 +77,10 @@ export default function TerminalSection() {
       case 'skills':
         result = (
           <div>
-            <p>Languages: TypeScript, JavaScript (ES6+), Python, Java, SQL, C++</p>
-            <p>Frontend: Next.js 15, React 19, HTML5, CSS3, TailwindCSS</p>
-            <p>Backend & DB: Node.js, Express, PostgreSQL, Prisma ORM, Redis basics</p>
-            <p>DevOps & Tools: Git, GitHub, Docker, Postman, Linux, Vercel</p>
+            <p>Languages: Java, JavaScript (ES6+), SQL (MySQL), TypeScript, C++, Python</p>
+            <p>Backend & DB: Spring Boot, MySQL, REST APIs, Node.js, Express</p>
+            <p>Frontend: HTML5, CSS3, JavaScript Client Logic, React / Next.js</p>
+            <p>DevOps & Tools: Git, GitHub, Postman, Linux, Vercel</p>
           </div>
         );
         break;
@@ -111,7 +110,7 @@ export default function TerminalSection() {
       case 'education':
         result = (
           <p>
-            BSc (Hons) in Software Engineering Undergrad · University of Colombo. Coursework: Advanced Data Structures, OOP, Relational Database Systems, Software Architecture, REST APIs.
+            Bachelor of Information Technology (BIT) · University of Colombo (Colombo, SL). Core areas: Software Development, Relational Databases (MySQL), Enterprise Java, Spring Boot, REST APIs, Object-Oriented Design, and Web Systems.
           </p>
         );
         break;
