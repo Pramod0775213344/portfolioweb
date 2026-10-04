@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Pramod Ravisanka',
+  title: 'Pramod Ravishanka | Software Engineer',
   description:
-    'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
+    'Portfolio of Pramod Ravishanka (Pramod Ravisanka) - Software Engineer & BIT undergraduate at University of Colombo, Sri Lanka. Specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architecture.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -13,42 +13,46 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
-  authors: [{ name: 'Pramod Ravisanka' }],
-  creator: 'Pramod Ravisanka',
+  authors: [{ name: 'Pramod Ravishanka' }, { name: 'Pramod Ravisanka' }],
+  creator: 'Pramod Ravishanka',
   keywords: [
+    'Pramod Ravishanka',
+    'Pramod Ravishanka Software Engineer',
     'Pramod Ravisanka',
+    'Pramod Ravisanka Software Engineer',
+    'Software Engineer Sri Lanka',
+    'Pramod Ravishanka Portfolio',
+    'Pramod Ravishanka Colombo',
     'Bachelor of Information Technology',
-    'BIT',
+    'BIT University of Colombo',
     'University of Colombo',
-    'Colombo SL',
-    'Software Engineer',
-    'Java',
-    'Spring Boot',
-    'MySQL',
-    'Full Stack Developer',
-    'Sri Lanka',
-    'Portfolio',
+    'Java Spring Boot Developer',
+    'Full Stack Software Engineer',
+    'pramodravisanka.online',
   ],
   metadataBase: new URL('https://pramodravisanka.online'),
+  alternates: {
+    canonical: 'https://pramodravisanka.online',
+  },
   openGraph: {
-    title: 'Pramod Ravisanka',
+    title: 'Pramod Ravishanka | Software Engineer',
     description:
-      'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
+      'Official portfolio of Pramod Ravishanka (Pramod Ravisanka). Software Engineer & BIT undergraduate at University of Colombo specializing in Java, Spring Boot, MySQL, and full-stack development.',
     url: 'https://pramodravisanka.online',
-    siteName: 'Pramod Ravisanka',
+    siteName: 'Pramod Ravishanka Portfolio',
     images: [
       {
         url: 'https://pramodravisanka.online/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Pramod Ravisanka - Software Engineer Portfolio',
+        alt: 'Pramod Ravishanka - Software Engineer Portfolio',
         type: 'image/jpeg',
       },
       {
         url: 'https://pramodravisanka.online/og-image-square.jpg',
         width: 600,
         height: 600,
-        alt: 'Pramod Ravisanka',
+        alt: 'Pramod Ravishanka',
         type: 'image/jpeg',
       },
     ],
@@ -57,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pramod Ravisanka',
+    title: 'Pramod Ravishanka | Software Engineer',
     description:
-      'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Engineered enterprise Transport Management System using Java, Spring Boot, MySQL.',
+      'Portfolio of Pramod Ravishanka - Software Engineer & BIT undergraduate at University of Colombo. Enterprise Java, Spring Boot, MySQL, REST APIs.',
     images: ['https://pramodravisanka.online/og-image.jpg'],
   },
 };
@@ -72,8 +76,18 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Pramod Ravisanka',
+    name: 'Pramod Ravishanka',
+    alternateName: ['Pramod Ravisanka', 'Pramod Ravishanka (BIT)', 'Pramod'],
+    url: 'https://pramodravisanka.online',
+    image: 'https://pramodravisanka.online/og-image.jpg',
     jobTitle: 'Software Engineer',
+    description:
+      'Software Engineer and Bachelor of Information Technology (BIT) undergraduate at University of Colombo, specializing in Java, Spring Boot, MySQL, and full-stack enterprise web systems.',
+    sameAs: [
+      'https://github.com/pramodravisanka',
+      'https://linkedin.com/in/pramod-ravisanka',
+      'https://pramodravisanka.online',
+    ],
     alumniOf: {
       '@type': 'EducationalOrganization',
       name: 'University of Colombo',
@@ -94,17 +108,17 @@ export default function RootLayout({
       addressLocality: 'Colombo',
     },
     knowsAbout: [
-      'Bachelor of Information Technology (BIT)',
-      'University of Colombo',
+      'Software Engineering',
       'Java',
       'Spring Boot',
       'MySQL',
-      'REST APIs',
+      'RESTful APIs',
+      'Database Architecture',
       'Full Stack Development',
       'Next.js',
       'TypeScript',
-      'Object-Oriented Programming',
-      'System Architecture',
+      'Bachelor of Information Technology (BIT)',
+      'University of Colombo',
     ],
   };
 
