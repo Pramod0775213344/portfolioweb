@@ -29,30 +29,23 @@ export const metadata: Metadata = {
     'Sri Lanka',
     'Portfolio',
   ],
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : 'https://pramodravisanka.online')
-  ),
+  metadataBase: new URL('https://pramodravisanka.online'),
   openGraph: {
     title: 'Pramod Ravisanka',
     description:
       'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
-    url: '/',
+    url: 'https://pramodravisanka.online',
     siteName: 'Pramod Ravisanka',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://pramodravisanka.online/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Pramod Ravisanka - Software Engineer Portfolio',
         type: 'image/jpeg',
       },
       {
-        url: '/og-image-square.jpg',
+        url: 'https://pramodravisanka.online/og-image-square.jpg',
         width: 600,
         height: 600,
         alt: 'Pramod Ravisanka',
@@ -67,7 +60,7 @@ export const metadata: Metadata = {
     title: 'Pramod Ravisanka',
     description:
       'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Engineered enterprise Transport Management System using Java, Spring Boot, MySQL.',
-    images: ['/og-image.jpg'],
+    images: ['https://pramodravisanka.online/og-image.jpg'],
   },
 };
 
@@ -122,14 +115,14 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
-        {/* WhatsApp & Social Media Preview Image Fallbacks */}
-        <meta property="og:image" content="/og-image.jpg" />
-        <meta property="og:image:secure_url" content="/og-image.jpg" />
+        {/* WhatsApp & Social Media Preview Image (Strict Absolute HTTPS URLs) */}
+        <meta property="og:image" content="https://pramodravisanka.online/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://pramodravisanka.online/og-image.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Pramod Ravisanka" />
-        <link rel="image_src" href="/og-image.jpg" />
+        <link rel="image_src" href="https://pramodravisanka.online/og-image.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
