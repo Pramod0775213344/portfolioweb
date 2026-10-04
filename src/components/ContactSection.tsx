@@ -38,35 +38,26 @@ export default function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formState.name || !formState.email || !formState.message) return;
-
     setFormStatus('loading');
     setErrorMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '');
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'a894d093-1946-4f8f-9998-9210fb5ff2eb',
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-          subject: `New Message from ${formState.name} - Pramod Ravisanka Portfolio`,
-          from_name: `${formState.name} (Portfolio Contact)`,
-        }),
+        body: formData,
       });
 
       const data = await res.json();
 
-      if (res.ok && data.success) {
+      if (data.success) {
         setFormStatus('success');
         setFormState({ name: '', email: '', message: '' });
+        (e.target as HTMLFormElement).reset();
       } else {
         setFormStatus('error');
         setErrorMessage(data.message || 'Failed to send message. Please try again.');
