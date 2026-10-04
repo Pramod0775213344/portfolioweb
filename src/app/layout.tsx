@@ -84,8 +84,8 @@ export default function RootLayout({
     description:
       'Software Engineer and Bachelor of Information Technology (BIT) undergraduate at University of Colombo, specializing in Java, Spring Boot, MySQL, and full-stack enterprise web systems.',
     sameAs: [
-      'https://github.com/pramodravisanka',
-      'https://linkedin.com/in/pramod-ravisanka',
+      'https://github.com/Pramod0775213344',
+      'https://linkedin.com/in/pramod-ravisanka-6a8711307',
       'https://pramodravisanka.online',
     ],
     alumniOf: {

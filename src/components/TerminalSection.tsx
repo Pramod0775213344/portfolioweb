@@ -89,22 +89,35 @@ export default function TerminalSection() {
 
       case 'projects':
         result = (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-            <p style={{ color: 'var(--accent)', fontWeight: 700 }}>
-              ★ Transport Management System (06/2025 – 06/2026) · University of Colombo
-            </p>
-            <p style={{ color: 'var(--text)' }}>
-              • Web-based enterprise system automating transportation and fleet management operations.
-            </p>
-            <p style={{ color: 'var(--text-muted)' }}>
-              • Tech Stack: Java, Spring Boot, JavaScript, MySQL, HTML5, CSS3, REST APIs.
-            </p>
-            <p style={{ color: 'var(--text-muted)' }}>
-              • Modules: Booking, Fleet, Driver, Supplier, Payment & Invoicing Management.
-            </p>
-            <p style={{ color: 'var(--text-muted)' }}>
-              • Highlights: Database-driven REST APIs, end-to-end operational logic, proactive defect resolution.
-            </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <div>
+              <p style={{ color: 'var(--accent)', fontWeight: 700 }}>
+                ★ 1. Transport Management System (06/2025 – 06/2026) · University of Colombo
+              </p>
+              <p style={{ color: 'var(--text)' }}>
+                • Web-based enterprise system automating transportation and fleet management operations.
+              </p>
+              <p style={{ color: 'var(--text-muted)' }}>
+                • Stack: Java, Spring Boot, MySQL, REST APIs, JavaScript, HTML5/CSS3.
+              </p>
+              <p style={{ color: 'var(--text-muted)' }}>
+                • Modules: Booking, Fleet, Driver, Supplier, Payment & Invoicing.
+              </p>
+            </div>
+            <div style={{ borderTop: '1px dashed var(--border)', paddingTop: '0.65rem' }}>
+              <p style={{ color: 'var(--accent)', fontWeight: 700 }}>
+                ★ 2. Gym Management System (2025 – 2026) · Full-Stack Project
+              </p>
+              <p style={{ color: 'var(--text)' }}>
+                • Comprehensive web app managing gym memberships, trainer allocations & finances.
+              </p>
+              <p style={{ color: 'var(--text-muted)' }}>
+                • Stack: Java, Spring Boot, MySQL, REST APIs, JavaScript.
+              </p>
+              <p style={{ color: 'var(--text-muted)' }}>
+                • Modules: Member Registration, Trainer Schedules, Subscription Billing, Attendance.
+              </p>
+            </div>
           </div>
         );
         break;
