@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Orange accent drop shadow -->
+  <rect x="11" y="11" width="47" height="47" fill="#FF5733" rx="2" />
+  <!-- Crisp white/cream card with dark border -->
+  <rect x="5" y="5" width="47" height="47" fill="#F3EFE6" stroke="#121110" stroke-width="3" rx="2" />
+  <!-- Centered PR text in bold mono/sans -->
+  <text 
+    x="28.5" 
+    y="29.5" 
+    text-anchor="middle" 
+    dominant-baseline="central" 
+    fill="#121110" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Space Mono', monospace, sans-serif" 
+    font-size="23" 
+    font-weight="900" 
+    letter-spacing="-0.5px"
+  >PR</text>
+</svg>

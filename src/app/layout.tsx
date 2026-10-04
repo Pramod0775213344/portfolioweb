@@ -2,9 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
+  title: 'Pramod Ravisanka',
   description:
     'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   authors: [{ name: 'Pramod Ravisanka' }],
   creator: 'Pramod Ravisanka',
   keywords: [
@@ -23,17 +31,17 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://pramodravisanka.dev'),
   openGraph: {
-    title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
+    title: 'Pramod Ravisanka',
     description:
       'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Software engineer specializing in Java, Spring Boot, MySQL, REST APIs, and database-driven web architectures.',
     url: 'https://pramodravisanka.dev',
-    siteName: 'Pramod Ravisanka Portfolio',
+    siteName: 'Pramod Ravisanka',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pramod Ravisanka · Bachelor of Information Technology (BIT) · University of Colombo',
+    title: 'Pramod Ravisanka',
     description:
       'Bachelor of Information Technology (BIT) from University of Colombo, Colombo, SL. Engineered enterprise Transport Management System using Java, Spring Boot, MySQL.',
   },
@@ -87,7 +95,9 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <head>
         <meta name="theme-color" content="#121110" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
