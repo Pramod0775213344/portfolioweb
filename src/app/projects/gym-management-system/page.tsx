@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
-import { ArrowLeft, Users, Dumbbell, CreditCard, ClipboardCheck, Network, CheckCircle2, ExternalLink, Cpu } from 'lucide-react';
+import { ArrowLeft, Users, Dumbbell, CreditCard, ClipboardCheck, Network, CheckCircle2, ExternalLink, Cpu, Monitor } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
 
 export const metadata: Metadata = {
@@ -428,6 +429,74 @@ export default function GymManagementSystemPage() {
                   >
                     {tech.category}
                   </span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+
+          {/* Screenshot Gallery */}
+          <section>
+            <h2
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.78rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.14em',
+                color: 'var(--text-subtle)',
+                marginBottom: '1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+              }}
+            >
+              <Monitor size={14} style={{ color: 'var(--accent)' }} />
+              [ UI Screenshots — Application Preview ]
+            </h2>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '1rem',
+              }}
+            >
+              {[
+                { src: '/screenshots/gms-dashboard.jpg', label: 'Dashboard Overview' },
+                { src: '/screenshots/gms-member.jpg', label: 'Member Registration' },
+                { src: '/screenshots/gms-payment.jpg', label: 'Payments & Billing' },
+              ].map((shot) => (
+                <div
+                  key={shot.src}
+                  style={{
+                    border: '1.5px solid var(--border)',
+                    backgroundColor: 'var(--surface)',
+                    boxShadow: '3px 3px 0px var(--border)',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+                    <Image
+                      src={shot.src}
+                      alt={shot.label}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      padding: '0.6rem 0.85rem',
+                      borderTop: '1px solid var(--border)',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.68rem',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      color: 'var(--text-muted)',
+                    }}
+                  >
+                    {shot.label}
+                  </div>
                 </div>
               ))}
             </div>
