@@ -64,13 +64,8 @@ export default function TransportManagementSystemPage() {
   ];
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--bg)',
-        color: 'var(--text)',
-      }}
-    >
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+
       {/* Back Navigation Bar */}
       <nav
         style={{
@@ -82,10 +77,7 @@ export default function TransportManagementSystemPage() {
           padding: '1rem 0',
         }}
       >
-        <div
-          className="container-pad"
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-        >
+        <div className="container-pad proj-nav-inner">
           <Link
             href="/#work"
             style={{
@@ -127,10 +119,10 @@ export default function TransportManagementSystemPage() {
         </div>
       </nav>
 
-      <main className="container-pad" style={{ paddingTop: '3rem', paddingBottom: '5rem' }}>
+      <main className="container-pad proj-main" style={{ paddingTop: '3rem', paddingBottom: '5rem' }}>
 
         {/* Project Hero */}
-        <header style={{ marginBottom: '3.5rem' }}>
+        <header className="proj-header" style={{ marginBottom: '3.5rem' }}>
           <div
             style={{
               display: 'flex',
@@ -143,6 +135,7 @@ export default function TransportManagementSystemPage() {
               letterSpacing: '0.12em',
               color: 'var(--accent)',
               marginBottom: '0.75rem',
+              flexWrap: 'wrap',
             }}
           >
             <span className="live-pulse" />
@@ -152,7 +145,7 @@ export default function TransportManagementSystemPage() {
           <h1
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
               fontWeight: 800,
               letterSpacing: '-0.03em',
               lineHeight: 1.05,
@@ -163,15 +156,7 @@ export default function TransportManagementSystemPage() {
             Transport Management System
           </h1>
 
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              gap: '1.25rem',
-              marginBottom: '1.75rem',
-            }}
-          >
+          <div className="proj-meta-row">
             <span
               style={{
                 backgroundColor: 'var(--accent)',
@@ -186,36 +171,17 @@ export default function TransportManagementSystemPage() {
             >
               Featured Capstone
             </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
-                color: 'var(--text-muted)',
-              }}
-            >
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Duration: 06/2025 — 06/2026
             </span>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
-                color: 'var(--text-muted)',
-              }}
-            >
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Category: Full-Stack Enterprise System
             </span>
           </div>
 
-          <p
-            style={{
-              fontSize: 'clamp(1rem, 2vw, 1.15rem)',
-              lineHeight: 1.75,
-              color: 'var(--text-muted)',
-              maxWidth: '860px',
-            }}
-          >
+          <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', lineHeight: 1.75, color: 'var(--text-muted)', maxWidth: '860px' }}>
             A web-based enterprise Transport Management System engineered to automate complete transportation and fleet management operations. Built with a scalable{' '}
-            <strong style={{ color: 'var(--text)' }}>Java & Spring Boot</strong> backend, interactive{' '}
+            <strong style={{ color: 'var(--text)' }}>Java &amp; Spring Boot</strong> backend, interactive{' '}
             <strong style={{ color: 'var(--text)' }}>JavaScript client interface</strong>, and a relational{' '}
             <strong style={{ color: 'var(--text)' }}>MySQL database</strong> to streamline bookings, vehicle tracking, driver assignments, supplier logistics, and financial invoicing in a single integrated platform.
           </p>
@@ -228,7 +194,7 @@ export default function TransportManagementSystemPage() {
             style={{
               border: '1.5px solid var(--border)',
               backgroundColor: 'var(--surface)',
-              padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+              padding: 'clamp(1.25rem, 3vw, 2.5rem)',
               boxShadow: '4px 4px 0px var(--border)',
             }}
           >
@@ -247,17 +213,10 @@ export default function TransportManagementSystemPage() {
               }}
             >
               <CheckCircle2 size={16} />
-              Key Responsibilities & Engineering Highlights
+              Key Responsibilities &amp; Engineering Highlights
             </h2>
 
-            <ul
-              style={{
-                listStyle: 'none',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '1rem',
-              }}
-            >
+            <ul className="proj-highlights-grid">
               {highlights.map((item, idx) => (
                 <li
                   key={idx}
@@ -311,13 +270,7 @@ export default function TransportManagementSystemPage() {
             >
               [ 6 Operational Modules Developed ]
             </h2>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-                gap: '1.25rem',
-              }}
-            >
+            <div className="proj-modules-grid">
               {modules.map((mod, i) => (
                 <div
                   key={i}
@@ -328,14 +281,7 @@ export default function TransportManagementSystemPage() {
                     boxShadow: '3px 3px 0px var(--border)',
                   }}
                 >
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.65rem',
-                      marginBottom: '0.75rem',
-                    }}
-                  >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '0.75rem' }}>
                     <span
                       style={{
                         width: '36px',
@@ -351,14 +297,7 @@ export default function TransportManagementSystemPage() {
                     >
                       {mod.icon}
                     </span>
-                    <h3
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '1rem',
-                        fontWeight: 700,
-                        color: 'var(--text)',
-                      }}
-                    >
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: 'var(--text)' }}>
                       {mod.title}
                     </h3>
                   </div>
@@ -375,7 +314,7 @@ export default function TransportManagementSystemPage() {
             style={{
               border: '1.5px solid var(--border)',
               backgroundColor: 'var(--surface)',
-              padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+              padding: 'clamp(1.25rem, 3vw, 2.5rem)',
               boxShadow: '4px 4px 0px var(--border)',
             }}
           >
@@ -393,13 +332,7 @@ export default function TransportManagementSystemPage() {
               [ Technologies Utilized ]
             </h2>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                gap: '1rem',
-              }}
-            >
+            <div className="proj-tech-grid">
               {techStack.map((tech) => (
                 <div
                   key={tech.name}
@@ -412,14 +345,7 @@ export default function TransportManagementSystemPage() {
                     gap: '0.3rem',
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '1.05rem',
-                      fontWeight: 700,
-                      color: 'var(--text)',
-                    }}
-                  >
+                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 700, color: 'var(--text)' }}>
                     {tech.name}
                   </span>
                   <span
@@ -438,7 +364,6 @@ export default function TransportManagementSystemPage() {
               ))}
             </div>
           </section>
-
 
           {/* Screenshot Gallery */}
           <section>
@@ -459,13 +384,7 @@ export default function TransportManagementSystemPage() {
               <Monitor size={14} style={{ color: 'var(--accent)' }} />
               [ UI Screenshots — Application Preview ]
             </h2>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '1rem',
-              }}
-            >
+            <div className="proj-gallery-grid">
               {[
                 { src: '/screenshots/tms-dashboard.jpg', label: 'Dashboard Overview' },
                 { src: '/screenshots/tms-fleet.jpg', label: 'Fleet Management' },
@@ -481,12 +400,7 @@ export default function TransportManagementSystemPage() {
                   }}
                 >
                   <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                    <Image
-                      src={shot.src}
-                      alt={shot.label}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
+                    <Image src={shot.src} alt={shot.label} fill style={{ objectFit: 'cover' }} />
                   </div>
                   <div
                     style={{
@@ -508,19 +422,7 @@ export default function TransportManagementSystemPage() {
           </section>
 
           {/* Academic Context */}
-
-          <section
-            style={{
-              border: '1.5px dashed var(--border)',
-              backgroundColor: 'var(--surface-subtle)',
-              padding: '1.75rem 2rem',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '1.5rem',
-            }}
-          >
+          <section className="proj-cta-section">
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
               <div
                 style={{
@@ -558,36 +460,21 @@ export default function TransportManagementSystemPage() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
+            <div className="proj-cta-buttons">
               <a
                 href="https://github.com/Pramod0775213344"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-brutal"
-                style={{
-                  padding: '0.7rem 1.35rem',
-                  fontSize: '0.8rem',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
+                style={{ padding: '0.7rem 1.35rem', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
               >
                 <GithubIcon size={16} />
                 <span>GitHub Profile</span>
               </a>
-
               <Link
                 href="/#contact"
                 className="btn-ghost"
-                style={{
-                  padding: '0.7rem 1.35rem',
-                  fontSize: '0.8rem',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
+                style={{ padding: '0.7rem 1.35rem', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
               >
                 <ExternalLink size={16} />
                 <span>Request Code Walkthrough</span>

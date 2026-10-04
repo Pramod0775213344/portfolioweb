@@ -409,3 +409,106 @@ body {
     padding-bottom: 4.5rem;
   }
 }
+
+/* ── Project Detail Pages ─────────────────────────────────── */
+
+/* Nav bar */
+.proj-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+@media (max-width: 480px) {
+  .proj-nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Hero meta row (badge + date + category) */
+.proj-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Key Responsibilities highlights grid */
+.proj-highlights-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1rem;
+}
+
+/* Modules grid */
+.proj-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.25rem;
+}
+
+/* Tech stack grid */
+.proj-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 45%), 1fr));
+  gap: 1rem;
+}
+
+/* Screenshot gallery grid */
+.proj-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1rem;
+}
+
+/* Academic context / CTA section */
+.proj-cta-section {
+  border: 1.5px dashed var(--border);
+  background-color: var(--surface-subtle);
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media (max-width: 640px) {
+  .proj-cta-section {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* CTA button row */
+.proj-cta-buttons {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  .proj-cta-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+  .proj-cta-buttons a,
+  .proj-cta-buttons a[href] {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Main content padding on mobile */
+@media (max-width: 640px) {
+  .proj-main {
+    padding-top: 1.75rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .proj-header {
+    margin-bottom: 2rem !important;
+  }
+}
+
