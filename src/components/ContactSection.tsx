@@ -97,9 +97,8 @@ export default function ContactSection() {
           {/* Left Column: Coordinates & Timezone Info */}
           <div>
             <div
-              className="card"
+              className="card contact-card"
               style={{
-                padding: '2.5rem',
                 border: '1.5px solid var(--border)',
                 backgroundColor: 'var(--surface)',
                 boxShadow: '4px 4px 0px var(--border)',
@@ -167,9 +166,10 @@ export default function ContactSection() {
                     <span
                       style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: '0.92rem',
+                        fontSize: '0.88rem',
                         fontWeight: 700,
                         color: 'var(--text)',
+                        wordBreak: 'break-all',
                       }}
                     >
                       {emailAddress}
@@ -200,9 +200,9 @@ export default function ContactSection() {
 
                 {/* Live Clock & Location Widget */}
                 <div
+                  className="contact-meta-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '1rem',
                     marginBottom: '2rem',
                   }}
@@ -311,9 +311,8 @@ export default function ContactSection() {
           {/* Right Column: Interactive Form */}
           <div>
             <div
-              className="card"
+              className="card contact-card"
               style={{
-                padding: '2.5rem',
                 border: '1.5px solid var(--border)',
                 backgroundColor: 'var(--surface)',
                 boxShadow: '4px 4px 0px var(--border)',
@@ -568,6 +567,25 @@ export default function ContactSection() {
       </div>
 
       <style jsx>{`
+        .contact-card {
+          padding: 1.25rem;
+        }
+        .contact-meta-grid {
+          grid-template-columns: 1fr;
+        }
+        @media (min-width: 480px) {
+          .contact-card {
+            padding: 1.75rem;
+          }
+          .contact-meta-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 768px) {
+          .contact-card {
+            padding: 2.5rem;
+          }
+        }
         @media (min-width: 900px) {
           .contact-grid {
             grid-template-columns: 5fr 6fr !important;
