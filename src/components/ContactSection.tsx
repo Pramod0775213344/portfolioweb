@@ -45,6 +45,8 @@ export default function ContactSection() {
 
     const formData = new FormData(e.currentTarget);
     formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '');
+    formData.append('subject', `Portfolio Contact: Message from ${formState.name || 'Visitor'}`);
+    formData.append('from_name', formState.name || 'Portfolio Visitor');
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -440,6 +442,7 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
                       required
                       placeholder="e.g. Kasun Fernando"
@@ -476,6 +479,7 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
                       required
                       placeholder="e.g. kasun@company.com"
@@ -512,6 +516,7 @@ export default function ContactSection() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       required
                       placeholder="Tell me about the role, team, or project..."
