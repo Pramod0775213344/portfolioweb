@@ -46,12 +46,20 @@ export default function ContactSection() {
     setErrorMessage('');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({
+          access_key: 'a894d093-1946-4f8f-9998-9210fb5ff2eb',
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          subject: `New Message from ${formState.name} - Pramod Ravisanka Portfolio`,
+          from_name: `${formState.name} (Portfolio Contact)`,
+        }),
       });
 
       const data = await res.json();
@@ -61,11 +69,7 @@ export default function ContactSection() {
         setFormState({ name: '', email: '', message: '' });
       } else {
         setFormStatus('error');
-        setErrorMessage(
-          data.requiresKey
-            ? 'Web3Forms API Key is not configured yet in Vercel environment variables.'
-            : data.message || 'Failed to send message.'
-        );
+        setErrorMessage(data.message || 'Failed to send message. Please try again.');
       }
     } catch (err: any) {
       setFormStatus('error');
