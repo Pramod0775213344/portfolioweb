@@ -284,7 +284,7 @@ export default function ContactSection() {
                 </p>
                 <div style={{ display: 'flex', gap: '0.75rem' }}>
                   <a
-                    href="https://github.com/pramodravisanka"
+                    href="https://github.com/Pramod0775213344"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost"
@@ -294,7 +294,7 @@ export default function ContactSection() {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://linkedin.com/in/pramod-ravisanka"
+                    href="https://linkedin.com/in/pramod-ravisanka-6a8711307"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost"
@@ -396,11 +396,11 @@ export default function ContactSection() {
                           'Portfolio Message from ' + (formState.name || 'Visitor')
                         )}&body=${encodeURIComponent(
                           (formState.message || '') +
-                            '\n\n---\nFrom: ' +
-                            (formState.name || '') +
-                            ' (' +
-                            (formState.email || '') +
-                            ')'
+                          '\n\n---\nFrom: ' +
+                          (formState.name || '') +
+                          ' (' +
+                          (formState.email || '') +
+                          ')'
                         )}`}
                         style={{
                           display: 'inline-flex',
