@@ -88,11 +88,22 @@ export default function TerminalSection() {
 
       case 'projects':
         result = (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            <p>1. CampusSync — Academic Resource & Timetable Orchestration [Next.js, PostgreSQL]</p>
-            <p>2. DevPulse — Distributed Service Health & Latency Monitor [Node.js, WebSockets, Redis]</p>
-            <p>3. AlgoVisual — Interactive Algorithm Visualizer [React, Canvas API, Workers]</p>
-            <p>4. CloudVault — Encrypted File Storage Engine [Next.js, AWS S3 API]</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+            <p style={{ color: 'var(--accent)', fontWeight: 700 }}>
+              ★ Transport Management System (06/2025 – 06/2026) · University of Colombo
+            </p>
+            <p style={{ color: 'var(--text)' }}>
+              • Web-based enterprise system automating transportation and fleet management operations.
+            </p>
+            <p style={{ color: 'var(--text-muted)' }}>
+              • Tech Stack: Java, Spring Boot, JavaScript, MySQL, HTML5, CSS3, REST APIs.
+            </p>
+            <p style={{ color: 'var(--text-muted)' }}>
+              • Modules: Booking, Fleet, Driver, Supplier, Payment & Invoicing Management.
+            </p>
+            <p style={{ color: 'var(--text-muted)' }}>
+              • Highlights: Database-driven REST APIs, end-to-end operational logic, proactive defect resolution.
+            </p>
           </div>
         );
         break;
@@ -100,7 +111,7 @@ export default function TerminalSection() {
       case 'education':
         result = (
           <p>
-            BSc (Hons) in Software Engineering Undergrad. Coursework: Data Structures, OOP, Database Systems, Computer Networks, Software Architecture.
+            BSc (Hons) in Software Engineering Undergrad · University of Colombo. Coursework: Advanced Data Structures, OOP, Relational Database Systems, Software Architecture, REST APIs.
           </p>
         );
         break;

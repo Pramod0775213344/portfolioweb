@@ -186,7 +186,7 @@ export default function AboutSection() {
                       Software Engineering Undergrad
                     </h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                      BSc (Hons) in Computing / Software Engineering
+                      BSc (Hons) in Software Engineering · University of Colombo
                     </p>
                   </div>
                 </li>
@@ -203,10 +203,10 @@ export default function AboutSection() {
                   />
                   <div>
                     <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text)' }}>
-                      Technical Deep Dive
+                      Capstone Engineering System
                     </h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-                      Full-Stack Next.js 15, TypeScript, API Design, Docker & PostgreSQL
+                      Transport Management System (Java, Spring Boot, MySQL, REST APIs)
                     </p>
                   </div>
                 </li>

@@ -101,9 +101,7 @@ export default function HeroSection() {
               <span className="text-stroke" style={{ display: 'block' }}>
                 Ravisanka
               </span>
-            </h1>
-
-            {/* Description */}
+            </h1>            {/* Description */}
             <p
               style={{
                 fontSize: 'clamp(1rem, 2vw, 1.18rem)',
@@ -113,7 +111,7 @@ export default function HeroSection() {
                 marginBottom: '2rem',
               }}
             >
-              I am a <strong style={{ color: 'var(--text)' }}>Software Engineering Undergraduate</strong> with a passion for building clean, well-architected applications from first principles. I dive deep into data structures, modern full-stack web architectures, and system trade-offs to craft software that is reliable, scalable, and maintainable.
+              I am a <strong style={{ color: 'var(--text)' }}>Software Engineering Undergraduate</strong> at the <strong style={{ color: 'var(--text)' }}>University of Colombo</strong> with a passion for building clean, robust applications. Currently engineering an enterprise <strong style={{ color: 'var(--accent)' }}>Transport Management System</strong> utilizing Java, Spring Boot, MySQL, and modern web architectures.
             </p>
 
             {/* CTA Buttons */}
@@ -127,8 +125,8 @@ export default function HeroSection() {
               }}
             >
               <a href="#work" className="btn-brutal">
-                <span>View Selected Work</span>
-                <ArrowRight size={14} />
+                <span>View Featured Project</span>
+                <ArrowRight size={16} />
               </a>
 
               <a href="#terminal" className="btn-ghost">
@@ -192,7 +190,7 @@ export default function HeroSection() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Software Eng Undergrad
+                  Univ. of Colombo
                 </div>
               </div>
 
@@ -217,7 +215,7 @@ export default function HeroSection() {
                   }}
                 >
                   <span style={{ color: 'var(--accent)' }}>[ 02 ]</span>
-                  <span>Projects</span>
+                  <span>Project</span>
                 </div>
                 <div
                   style={{
@@ -229,7 +227,7 @@ export default function HeroSection() {
                     lineHeight: 1.1,
                   }}
                 >
-                  8+ Systems
+                  Transport TMS
                 </div>
                 <div
                   style={{
@@ -240,7 +238,7 @@ export default function HeroSection() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Engineered & Shipped
+                  Spring Boot & MySQL
                 </div>
               </div>
 
@@ -288,7 +286,7 @@ export default function HeroSection() {
                     textTransform: 'uppercase',
                   }}
                 >
-                  Next.js · Node · SQL
+                  Java · Spring Boot · JS
                 </div>
               </div>
 
