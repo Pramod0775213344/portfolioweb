@@ -176,7 +176,7 @@ body {
 }
 
 .section-pad {
-  padding-top: 5.5rem;
+  padding-top: 2.5rem;
   padding-bottom: 5.5rem;
   position: relative;
   border-bottom: 1.5px solid var(--border);
@@ -184,8 +184,8 @@ body {
 
 @media (min-width: 768px) {
   .section-pad {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -405,7 +405,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .section-pad {
-    padding-top: 4.5rem;
+    padding-top: 2rem;
     padding-bottom: 4.5rem;
   }
 }
