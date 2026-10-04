@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Mail, Clock, Copy, Check, Send, MapPin } from 'lucide-react';
+import { Mail, Clock, Copy, Check, Send, MapPin, AlertCircle, Loader2, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [currentTime, setCurrentTime] = useState<string>('');
 
@@ -37,14 +38,39 @@ export default function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || !formState.message) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormState({ name: '', email: '', message: '' });
-      setFormSubmitted(false);
-    }, 4000);
+
+    setFormStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setFormStatus('success');
+        setFormState({ name: '', email: '', message: '' });
+      } else {
+        setFormStatus('error');
+        setErrorMessage(
+          data.requiresKey
+            ? 'Web3Forms API Key is not configured yet in Vercel environment variables.'
+            : data.message || 'Failed to send message.'
+        );
+      }
+    } catch (err: any) {
+      setFormStatus('error');
+      setErrorMessage('Network connection error. You can still email directly below.');
+    }
   };
 
   return (
@@ -308,10 +334,10 @@ export default function ContactSection() {
                 Send a Message
               </h3>
 
-              {formSubmitted ? (
+              {formStatus === 'success' ? (
                 <div
                   style={{
-                    padding: '2rem',
+                    padding: '2.5rem 1.5rem',
                     backgroundColor: 'var(--surface-subtle)',
                     border: '1.5px solid var(--accent)',
                     textAlign: 'center',
@@ -322,24 +348,85 @@ export default function ContactSection() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      width: '44px',
-                      height: '44px',
+                      width: '48px',
+                      height: '48px',
                       backgroundColor: 'var(--accent)',
                       color: '#ffffff',
                       marginBottom: '1rem',
                     }}
                   >
-                    <Check size={24} />
+                    <Check size={26} strokeWidth={2.5} />
                   </div>
-                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700 }}>
-                    Message Received!
+                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.35rem', fontWeight: 700 }}>
+                    Message Dispatched!
                   </h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '0.5rem' }}>
-                    Thank you for reaching out, Pramod will respond promptly.
+                  <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', marginTop: '0.5rem', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto', marginBottom: '1.5rem' }}>
+                    Thank you for reaching out. Your message has been sent to Pramod and he will respond promptly.
                   </p>
+                  <button
+                    type="button"
+                    onClick={() => setFormStatus('idle')}
+                    className="btn-brutal"
+                    style={{
+                      padding: '0.65rem 1.2rem',
+                      fontSize: '0.78rem',
+                      margin: '0 auto',
+                    }}
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  {formStatus === 'error' && (
+                    <div
+                      style={{
+                        padding: '1rem 1.15rem',
+                        backgroundColor: 'rgba(255, 87, 51, 0.08)',
+                        border: '1.5px solid var(--accent)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.75rem',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.55rem', color: 'var(--accent)' }}>
+                        <AlertCircle size={18} style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.78rem', fontWeight: 700, lineHeight: 1.4 }}>
+                          {errorMessage || 'Unable to deliver message right now.'}
+                        </span>
+                      </div>
+                      <a
+                        href={`mailto:${emailAddress}?subject=${encodeURIComponent(
+                          'Portfolio Message from ' + (formState.name || 'Visitor')
+                        )}&body=${encodeURIComponent(
+                          (formState.message || '') +
+                            '\n\n---\nFrom: ' +
+                            (formState.name || '') +
+                            ' (' +
+                            (formState.email || '') +
+                            ')'
+                        )}`}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          padding: '0.5rem 0.85rem',
+                          backgroundColor: 'var(--accent)',
+                          color: '#ffffff',
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.72rem',
+                          fontWeight: 700,
+                          textDecoration: 'none',
+                          width: 'fit-content',
+                          marginTop: '0.25rem',
+                        }}
+                      >
+                        <span>Send via Email App / Gmail</span>
+                        <ExternalLink size={13} />
+                      </a>
+                    </div>
+                  )}
+
                   <div>
                     <label
                       htmlFor="name"
@@ -451,15 +538,27 @@ export default function ContactSection() {
 
                   <button
                     type="submit"
+                    disabled={formStatus === 'loading'}
                     className="btn-brutal"
                     style={{
                       width: '100%',
                       padding: '0.85rem',
                       justifyContent: 'center',
+                      opacity: formStatus === 'loading' ? 0.75 : 1,
+                      cursor: formStatus === 'loading' ? 'not-allowed' : 'pointer',
                     }}
                   >
-                    <span>Transmit Message</span>
-                    <Send size={15} />
+                    {formStatus === 'loading' ? (
+                      <>
+                        <Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} />
+                        <span>Transmitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Transmit Message</span>
+                        <Send size={15} />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
