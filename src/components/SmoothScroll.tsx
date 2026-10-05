@@ -25,6 +25,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     // Lock Lenis at absolute top
     lenis.scrollTo(0, { immediate: true });
+    (window as unknown as { lenis?: Lenis }).lenis = lenis;
 
     // ── KEY FIX ──────────────────────────────────────────────────────────────
     // Remove the .page-loading class that the blocking script added.
@@ -40,7 +41,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     // Handle hash in URL (e.g. user opened a bookmarked section link)
     const hash = window.location.hash;
-    if (hash && hash !== '#hero') {
+    if (hash && hash !== '#hero' && hash !== '#top') {
       setTimeout(() => {
         const target = document.querySelector(hash);
         if (target) {
@@ -63,7 +64,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
       e.preventDefault();
 
-      if (href === '#' || href === '#hero') {
+      if (href === '#' || href === '#hero' || href === '#top') {
         lenis.scrollTo(0, { duration: 1.2 });
         window.history.replaceState(null, '', window.location.pathname);
       } else {

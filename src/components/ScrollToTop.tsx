@@ -25,10 +25,21 @@ export default function ScrollToTop() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const lenis = (window as unknown as { lenis?: { scrollTo: (target: number, opts?: { duration?: number }) => void } }).lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <aside aria-label="Scroll to top navigation">
       <a
-        href="#hero"
+        href="#top"
+        onClick={handleScrollToTop}
         aria-label="Scroll back to top of page"
         className="scroll-to-top-btn"
         style={{

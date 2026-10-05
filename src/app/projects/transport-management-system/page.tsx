@@ -3,6 +3,9 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArrowLeft, CalendarCheck, Truck, Users, Briefcase, CreditCard, Network, CheckCircle2, ExternalLink, Cpu, Monitor } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
+import ProjectGallery from '@/components/ProjectGallery';
+import SmoothScroll from '@/components/SmoothScroll';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Transport Management System · Pramod Ravisanka',
@@ -63,8 +66,42 @@ export default function TransportManagementSystemPage() {
     { name: 'Git', category: 'Version Control' },
   ];
 
+  const tmsScreenshots = [
+    {
+      src: '/screenshots/tms-dashboard-overview.png',
+      title: 'Operations Dashboard Overview',
+      badge: 'Live Analytics & KPIs',
+      desc: 'Real-time logistics control center featuring live active bookings, on-time delivery efficiency rates, active vehicle/driver metrics, recent dispatch records, booking status donut chart, and fleet utilization gauges.',
+    },
+    {
+      src: '/screenshots/tms-booking-management.png',
+      title: 'Booking Management & Cargo Dispatch',
+      badge: 'Core Dispatch',
+      desc: 'Comprehensive booking management console with multi-field search and filters by booking number, corporate customer, and vehicle type, presenting mileage, pickup/delivery points, and real-time processing statuses.',
+    },
+    {
+      src: '/screenshots/tms-vehicle-assignment-tracking.png',
+      title: 'Vehicle Assignment & Journey Lifecycle Tracking',
+      badge: 'Fleet Lifecycle Tracking',
+      desc: 'Interactive assignment view showing allocated vehicle specs, driver credentials, and an integrated 6-step journey tracker (Inprocess → Attend → Arrived at Pickup → Departed from Pickup → Arrived at Delivery → Departed from Delivery).',
+    },
+    {
+      src: '/screenshots/tms-vehicle-assign-filter.png',
+      title: 'Vehicle Assignments Query Console',
+      badge: 'Dispatch Filtering',
+      desc: 'Time-windowed filter console allowing logistics coordinators to query scheduled shipments by Today, Yesterday, This Week, or This Month presets and custom date ranges before vehicle dispatching.',
+    },
+    {
+      src: '/screenshots/tms-report-center.png',
+      title: 'Report Hub & Enterprise Auditing',
+      badge: 'Business Intelligence',
+      desc: 'Centralized report center categorizing Administrative, Operational, and Financial modules — including PnL statements, driver performance evaluations, customer/supplier payment summaries, and automated license/insurance expiry monitors.',
+    },
+  ];
+
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+    <SmoothScroll>
+      <div id="top" style={{ minHeight: '100vh', backgroundColor: 'var(--bg)', color: 'var(--text)', position: 'relative' }}>
 
       {/* Back Navigation Bar */}
       <nav
@@ -365,61 +402,12 @@ export default function TransportManagementSystemPage() {
             </div>
           </section>
 
-          {/* Screenshot Gallery */}
-          <section>
-            <h2
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.78rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.14em',
-                color: 'var(--text-subtle)',
-                marginBottom: '1.25rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.6rem',
-              }}
-            >
-              <Monitor size={14} style={{ color: 'var(--accent)' }} />
-              [ UI Screenshots — Application Preview ]
-            </h2>
-            <div className="proj-gallery-grid">
-              {[
-                { src: '/screenshots/tms-dashboard.jpg', label: 'Dashboard Overview' },
-                { src: '/screenshots/tms-fleet.jpg', label: 'Fleet Management' },
-                { src: '/screenshots/tms-invoice.jpg', label: 'Payments & Invoicing' },
-              ].map((shot) => (
-                <div
-                  key={shot.src}
-                  style={{
-                    border: '1.5px solid var(--border)',
-                    backgroundColor: 'var(--surface)',
-                    boxShadow: '3px 3px 0px var(--border)',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                    <Image src={shot.src} alt={shot.label} fill style={{ objectFit: 'cover' }} />
-                  </div>
-                  <div
-                    style={{
-                      padding: '0.6rem 0.85rem',
-                      borderTop: '1px solid var(--border)',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.68rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--text-muted)',
-                    }}
-                  >
-                    {shot.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Screenshot Gallery with Interactive Lightbox */}
+          <ProjectGallery
+            images={tmsScreenshots}
+            sectionTitle="UI Screenshots & System Walkthrough"
+            subtitle="Production UI captures from the live deployed Transport Management System."
+          />
 
           {/* Academic Context */}
           <section className="proj-cta-section">
@@ -484,6 +472,8 @@ export default function TransportManagementSystemPage() {
 
         </div>
       </main>
+      <ScrollToTop />
     </div>
+  </SmoothScroll>
   );
 }

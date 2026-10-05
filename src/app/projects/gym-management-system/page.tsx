@@ -3,6 +3,9 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { ArrowLeft, Users, Dumbbell, CreditCard, ClipboardCheck, Network, CheckCircle2, ExternalLink, Cpu, Monitor } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
+import ProjectGallery from '@/components/ProjectGallery';
+import SmoothScroll from '@/components/SmoothScroll';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export const metadata: Metadata = {
   title: 'Gym Management System · Pramod Ravishanka',
@@ -58,8 +61,30 @@ export default function GymManagementSystemPage() {
     { name: 'Git', category: 'Version Control' },
   ];
 
+  const gmsScreenshots = [
+    {
+      src: '/screenshots/gms-dashboard.jpg',
+      title: 'Gym Operations & Analytics Dashboard',
+      badge: 'Executive Dashboard',
+      desc: 'Central management dashboard featuring active member counts, monthly subscription renewals, attendance graphs, trainer schedules, and quick action shortcuts for desk staff.',
+    },
+    {
+      src: '/screenshots/gms-member.jpg',
+      title: 'Member Registration & Plan Enrollment',
+      badge: 'Member Onboarding',
+      desc: 'Multi-tiered membership enrollment interface managing personal records, medical clearance notes, assigned trainers, package tier selection, and RFID check-in keycards.',
+    },
+    {
+      src: '/screenshots/gms-payment.jpg',
+      title: 'Subscription Billing & Invoicing Console',
+      badge: 'Financial Management',
+      desc: 'Automated subscription fee ledger and invoice generator with recurring payment tracking, overdue balance reminders, digital receipts, and exportable financial logs.',
+    },
+  ];
+
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+    <SmoothScroll>
+      <div id="top" style={{ minHeight: '100vh', backgroundColor: 'var(--bg)', color: 'var(--text)', position: 'relative' }}>
 
       {/* Back Navigation Bar */}
       <nav
@@ -360,61 +385,12 @@ export default function GymManagementSystemPage() {
             </div>
           </section>
 
-          {/* Screenshot Gallery */}
-          <section>
-            <h2
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.78rem',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.14em',
-                color: 'var(--text-subtle)',
-                marginBottom: '1.25rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.6rem',
-              }}
-            >
-              <Monitor size={14} style={{ color: 'var(--accent)' }} />
-              [ UI Screenshots — Application Preview ]
-            </h2>
-            <div className="proj-gallery-grid">
-              {[
-                { src: '/screenshots/gms-dashboard.jpg', label: 'Dashboard Overview' },
-                { src: '/screenshots/gms-member.jpg', label: 'Member Registration' },
-                { src: '/screenshots/gms-payment.jpg', label: 'Payments & Billing' },
-              ].map((shot) => (
-                <div
-                  key={shot.src}
-                  style={{
-                    border: '1.5px solid var(--border)',
-                    backgroundColor: 'var(--surface)',
-                    boxShadow: '3px 3px 0px var(--border)',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                    <Image src={shot.src} alt={shot.label} fill style={{ objectFit: 'cover' }} />
-                  </div>
-                  <div
-                    style={{
-                      padding: '0.6rem 0.85rem',
-                      borderTop: '1px solid var(--border)',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.68rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--text-muted)',
-                    }}
-                  >
-                    {shot.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Screenshot Gallery with Interactive Lightbox */}
+          <ProjectGallery
+            images={gmsScreenshots}
+            sectionTitle="UI Screenshots & System Walkthrough"
+            subtitle="Production UI captures from the live deployed Gym Management System."
+          />
 
           {/* Academic Context */}
           <section className="proj-cta-section">
@@ -479,6 +455,8 @@ export default function GymManagementSystemPage() {
 
         </div>
       </main>
+      <ScrollToTop />
     </div>
+  </SmoothScroll>
   );
 }
