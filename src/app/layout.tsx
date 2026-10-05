@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Pramod Ravishanka | Software Engineer',
@@ -171,6 +173,8 @@ export default function RootLayout({
         <div aria-hidden="true" className="grid-canvas" />
         <div aria-hidden="true" className="edge-vignette" />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
