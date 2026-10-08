@@ -14,9 +14,8 @@ export default function SkillsSection() {
         { name: 'Java', level: 'Strong', note: 'Spring Boot, OOP Principles, MVC, Collections' },
         { name: 'JavaScript (ES6+)', level: 'Strong', note: 'DOM Manipulation, Async/Await, Web APIs' },
         { name: 'SQL (MySQL)', level: 'Strong', note: 'Relational Schema Design, Queries, ACID' },
-        { name: 'TypeScript', level: 'Proficient', note: 'Strict typing, Generics, Interfaces' },
-        { name: 'C++', level: 'Academic', note: 'Memory management, Pointers, Algorithms' },
-        { name: 'Python', level: 'Intermediate', note: 'Scripting, Data structures, Automation' },
+        { name: 'TypeScript', level: 'Learning', note: 'Strict typing, Generics, Interfaces' },
+
       ],
     },
     {
@@ -26,8 +25,8 @@ export default function SkillsSection() {
         { name: 'Spring Boot', level: 'Strong', note: 'RESTful Web Services, MVC, Repositories' },
         { name: 'MySQL', level: 'Strong', note: 'Database-driven applications, Normalization' },
         { name: 'REST APIs', level: 'Strong', note: 'Endpoint Architecture, JSON Payloads, CRUD' },
-        { name: 'Node.js & Express', level: 'Proficient', note: 'Middleware, Backend APIs, Routing' },
-        { name: 'PostgreSQL', level: 'Proficient', note: 'Relational design, Constraints' },
+        { name: 'Node.js & Express', level: 'Learning', note: 'Middleware, Backend APIs, Routing' },
+        { name: 'PostgreSQL', level: 'Learning', note: 'Relational design, Constraints' },
       ],
     },
     {
@@ -36,8 +35,8 @@ export default function SkillsSection() {
       items: [
         { name: 'HTML5 & Modern CSS', level: 'Strong', note: 'Semantic Markup, Responsive Design, Flex/Grid' },
         { name: 'JavaScript Client Logic', level: 'Strong', note: 'Interactive UI, Event handling, Fetch API' },
-        { name: 'Next.js 15 & React', level: 'Proficient', note: 'Component Architecture, SSR, State' },
-        { name: 'Tailwind & Vanilla CSS', level: 'Proficient', note: 'Custom styling, Design tokens' },
+        { name: 'Next.js 15 & React', level: 'Learning', note: 'Component Architecture, SSR, State' },
+        { name: 'Tailwind & Vanilla CSS', level: 'Learning', note: 'Custom styling, Design tokens' },
       ],
     },
     {
@@ -46,9 +45,7 @@ export default function SkillsSection() {
       items: [
         { name: 'Git & GitHub', level: 'Strong', note: 'Branching, PRs, Rebase, Issue tracking' },
         { name: 'Docker', level: 'Working', note: 'Containerizing Node/Next.js services' },
-        { name: 'Postman & Insomnia', level: 'Strong', note: 'API testing, mock servers, automation' },
-        { name: 'Linux / Bash', level: 'Intermediate', note: 'Command line, shell scripts, permissions' },
-        { name: 'Vercel & Railway', level: 'Proficient', note: 'CI/CD preview deployments, env vars' },
+        { name: 'Postman', level: 'Strong', note: 'API testing, mock servers, automation' },
       ],
     },
     {
